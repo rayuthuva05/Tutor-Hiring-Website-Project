@@ -10,7 +10,8 @@
 			} else {
 				die("Error ".mysqli_error($connect));
 			}
-
+            header('Location: ../register.html');
+            exit;
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
