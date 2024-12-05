@@ -37,9 +37,9 @@
                 <div class="shadow p-3 mb-5 rounded card" style="background-image: url(images/gray-abstract-wireframe-technology-background_53876-101941.jpg);background-size: cover;">
                   <img src="images/logo.png" class="mx-auto d-block" style="max-width: 150px;">  
                   <h1 class="text-center text-uppercase fw-bold text-blue p-4">Sign Up</h1>
-                    <form action="register.html" method="post" class="was-validated text-center">
+                    <form action="register.html" method="post" class="was-validated text-center" id="signup_form">
                         <div class="mb-3">
-                            <input type="text" class="form-control text-center bg-body-tertiary rounded" id="user" placeholder="User Name" name="user" required>
+                            <input type="text" class="form-control text-center bg-body-tertiary rounded" id="user" placeholder="User Name" name="username" required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
@@ -57,6 +57,7 @@
                             <input type="password" class="form-control text-center bg-body-tertiary rounded" id="cpassword" placeholder="Re-Enter Password" name="cpassword" required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please fill out this field.</div>
+                            <div class="error_message" id="error_message">Passwords do not match!</div>
                         </div>
                         <div class="mb-3 d-flex justify-content-center">
                             <div class="form-check text-center">
@@ -95,5 +96,6 @@
 </footer>
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+   <script src="js/password.js"></script>
 </body>
 </html>
