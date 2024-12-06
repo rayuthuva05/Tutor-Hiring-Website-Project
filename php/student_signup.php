@@ -24,7 +24,9 @@
 		$phone=$_POST['phone'];
 		$gradien_phone=$_POST['guardian-phone'];
 		$school=$_POST['school'];
-		AddData($connect,$fullname,$sex,$age,$address,$phone,$gradien_phone,$school);
+		
+		$sexDbValue = ($sex === 'male') ? 'M' : 'F';
+		AddData($connect,$fullname,$sexDbValue,$age,$address,$phone,$gradien_phone,$school);
 	}
 
 	?>
