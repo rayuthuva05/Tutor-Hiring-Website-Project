@@ -6,7 +6,7 @@
 			$sql = "INSERT INTO user VALUES('$username','$email','$hashed_password')";
 			$result = mysqli_query($connect,$sql);
 			if ($result) {
-				//echo "New student record created sucessfully";
+				
 			} else {
 				die("Error ".mysqli_error($connect));
 			}
