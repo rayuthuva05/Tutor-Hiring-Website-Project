@@ -46,8 +46,7 @@
                     </div>
                 
                     <div class="text-center">
-                        <a href="index.html" class="btn btn-primary">Go to Home</a>
-                        <a href="login.html" class="btn btn-secondary" disabled>Login</a>
+                        <button class="btn btn-primary" onclick="openMail()">Check Mail</button>
                     </div>
                 </div>
             </div>
@@ -75,5 +74,11 @@
 </footer>
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+   <script>
+    function openMail() {
+        
+        window.location.href = "mailto:";
+    }
+</script>
 </body>
 </html>
