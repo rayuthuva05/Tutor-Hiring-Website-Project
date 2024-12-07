@@ -23,11 +23,11 @@
 		$address=$_POST['address'];
 		$phone=$_POST['phone'];
 		$email=$_POST['email'];
-		$qualification=$_POST['high_qualification'];
-		$specialize=$_POST['specialize'];
-		$year_exp=$_POST['year_exp'];
-		$institute=$_POST['institute'];
-		$short_bio=$_POST['short_bio'];
+		$qualification=$_POST['qualification'];
+		$specialize=$_POST['subject'];
+		$year_exp=$_POST['experience'];
+		$institute=$_POST['institution'];
+		$short_bio=$_POST['bio'];
 		$sexDbValue = ($sex === 'male') ? 'M' : 'F';
 		AddData($connect,$fullname,$sexDbValue,$age,$address,$phone,$email,$qualification,$specialize,$year_exp,$institute,$short_bio);
 	}
