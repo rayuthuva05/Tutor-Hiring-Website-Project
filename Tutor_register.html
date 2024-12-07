@@ -38,7 +38,7 @@
                 <div class="shadow p-3 mb-5 rounded card" style="background-image: url(images/gray-abstract-wireframe-technology-background_53876-101941.jpg);background-size: cover;">
                   <a href="register.html" class="text-blue"><b><-go back</b></a>  
                   <h3 class="text-center text-uppercase fw-bold text-blue p-4">Tutor Registeration</h3>
-                    <form action="Tutor_register_next.html" class="was-validated text-center">
+                    <form action="php/tutor_register.php" class="was-validated text-center">
                         <div class="mb-3">
                             <input type="text" class="form-control text-center" id="fullname" placeholder="Full Name" name="fullname" required>
                             <div class="invalid-feedback">Please enter your full name.</div>
@@ -77,9 +77,39 @@
                             <div class="invalid-feedback">Please enter a valid email address.</div>
                         </div>
                         
-                        <div class="text-end">
-                        <button type="submit" class="btn btn-primary">Next>></button>
+                        <div class="mb-3">
+                            <input type="text" class="form-control text-center" id="qualification" placeholder="Highest Qualification" name="qualification" required>
+                            <div class="invalid-feedback">Please enter your highest qualification.</div>
                         </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control text-center" id="subject" placeholder="Subject Specialization" name="subject" required>
+                            <div class="invalid-feedback">Please enter your subject specialization.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="number" class="form-control text-center" id="experience" placeholder="Years of Experience" name="experience" required>
+                            <div class="invalid-feedback">Please enter your years of experience.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control text-center" id="institution" placeholder="Your Institution" name="institution" required>
+                            <div class="invalid-feedback">Please enter your institution's name.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea class="form-control text-center" id="bio" placeholder="Short Bio" name="bio" required></textarea>
+                            <div class="invalid-feedback">Please provide a short bio.</div>
+                        </div>
+
+                        <div class="mb-3 d-flex justify-content-center">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="confirmation" name="confirmation" required>
+                                <label class="form-check-label" for="confirmation">I confirm that given infromation accurate.</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg mb-3">Submit</button>
                     </form>
                 </div>
             </div>
