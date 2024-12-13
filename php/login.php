@@ -1,22 +1,20 @@
 <?php
-require_once 'dbconf.php';
+ require_once 'db.php';
 
-if (isset($_POST['user'])) {
-    $user = $_POST['user'];
-
-    $sql = "SELECT * FROM user WHERE username = $user";
-    
-    $result = $stmt->get_result();
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-         echo "Welcome, " . htmlspecialchars($user['name']) . "! You have successfully logged in.";
-         header('Location: ../Students_dashboard.php'); 
-         exit;
-    } else {
-        echo "User not found!";
+ function checkPOSTParametersOrDie($parameters){
+    foreach($parameters as $parameter){
+        isset($_POST[$parameter]) || die("'$parameter' parameter must be set by POST method.");
     }
-
-}
-
-$conn->close();
-?>
+ }
+ 
+ checkPOSTParametersOrDie(['username','password']);
+ $username=$_POST['user'];
+ $password=$_POST['password'];
+ $db=new DB();
+ $authenticated =$db->authenticateUser($username,$password);
+ if($authenticated){
+ $response="Hello $username, youhavebeensuccessfullyauthenticated.";
+ }else{
+ $response='Incorrect credentials or user does not exist.';
+ }
+ echo $response;
