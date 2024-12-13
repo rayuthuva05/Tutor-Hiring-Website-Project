@@ -2,7 +2,7 @@
 require_once 'dbconf.php';
  class DB extends SQLite3 {
 
-    const DATABASE_NAME='e_teacher';
+    const DATABASE_NAME='e_teacher.db';
     const BCRYPT_COST=14;
  
     function __construct(){
