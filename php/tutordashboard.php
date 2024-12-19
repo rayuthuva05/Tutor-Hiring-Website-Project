@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[User Name]</title>
-    <link rel="icon" href="images/logo.png" type="image/x-icon" size="32x32">
-    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="../images/logo.png" type="image/x-icon" size="32x32">
+    <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="sylesheets/Sdashboard.css">
+    <link rel="stylesheet" href="../sylesheets/Sdashboard.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="dropdown">
-                    <img src="images/triple line.png" class="mx-auto d-block" style="max-width: 50px;" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../images/triple line.png" class="mx-auto d-block" style="max-width: 50px;" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu settings-dropdown">
                         <li><a class="dropdown-item" href="index.html">Home</a></li>
                         <li><a class="dropdown-item" href="Contactus.html">Contact Us</a></li>
@@ -27,10 +27,10 @@
             </div>
             <div class="d-flex justify-content-end ms-auto">
                 <input type="file" id="fileInput" accept="image/*" style="display: none;">
-                <img id="profilePicNav" src="images/teacher.png" alt="User" class="profile-pic" title="Click to upload a profile picture">
+                <img id="profilePicNav" src="../images/teacher.png" alt="User" class="profile-pic" title="Click to upload a profile picture">
                 <p style="font-size: 12px;" class="text-center text-black">[user name]</p>
                 <div class="dropdown">
-                    <img src="images/icone-de-cloche-et-d-alerte-noir.png" class="mx-auto d-block" style="max-width: 40px;" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../images/icone-de-cloche-et-d-alerte-noir.png" class="mx-auto d-block" style="max-width: 40px;" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu settings-dropdown dropdown-menu-end">
                         <li><a class="dropdown-item" href="#">See the notification</a></li><hr>
                         <li><a class="dropdown-item" href="#">You got the new event</a></li><hr>
@@ -39,7 +39,7 @@
                     </ul>
                 </div>
                 <div class="dropdown">
-                    <img src="images/setting.png" class="mx-auto d-block" style="max-width: 50px;" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../images/setting.png" class="mx-auto d-block" style="max-width: 50px;" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu notification-dropdown dropdown-menu-end">
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><a class="dropdown-item" href="#">Account</a></li>
@@ -104,7 +104,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center">
-                    <img id="largeProfilePic" src="images/default-profile.png" alt="Profile Picture" class="modal-img">
+                    <img id="largeProfilePic" src="../images/default-profile.png" alt="Profile Picture" class="modal-img">
                 </div>
                 <div class="modal-footer">
                     <input type="file" id="modalFileInput" accept="image/*" style="display: none;">
@@ -115,7 +115,7 @@
     </div>
 
     <div class="modal-body text-center">
-        <img id="largeProfilePic" src="images/teacher.png" alt="Profile Picture" class="modal-img" style="display: none;">
+        <img id="largeProfilePic" src="../images/teacher.png" alt="Profile Picture" class="modal-img" style="display: none;">
         <p id="uploadPrompt" class="text-muted"></p>
     </div>
 
@@ -137,8 +137,8 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/fileupload.js"></script>
-    <script src="js/tutor.js"></script>
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/fileupload.js"></script>
+    <script src="../js/tutor.js"></script>
 </body>
 </html>
