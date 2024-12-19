@@ -15,7 +15,7 @@
  }
  echo $response;
 
-
+?>
 
  <?php
 require_once 'dbconf.php';
