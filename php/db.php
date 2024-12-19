@@ -26,18 +26,19 @@ require_once 'dbconf.php';
     }
     
     protected function userExists($username){
-        $sql='SELECT COUNT(*) AS count
-            FROM user
-            WHERE username=:username';
-            
-        $statement=$this->prepare($sql);
-        $statement->bindValue(':username',$username);
-        $result=$statement->execute();
-        $row=$result->fetchArray();
-        $exists=($row['count']=== 1)?true:false;
+        $sql = 'SELECT COUNT(*) AS count FROM user WHERE username = :username';
+        $statement = $this->prepare($sql);
+        if (!$statement) {
+            throw new Exception("Failed to prepare statement: " . $this->lastErrorMsg());
+        }
+        $statement->bindValue(':username', $username);
+        $result = $statement->execute();
+        $row = $result->fetchArray();
+        $exists = ($row['count'] == 1) ? true : false;
         $statement->close();
         return $exists;
     }
+    
 
     protected function getUsersPassword($username){
         $sql='SELECT password
