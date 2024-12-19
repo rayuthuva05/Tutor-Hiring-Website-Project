@@ -1,14 +1,13 @@
 <?php
-    require_once 'dbconf.php';
+require_once 'dbconf.php';
         if (isset($_POST['login'])) {
             
             $username = $_POST["user"];
             $password = $_POST["password"];
-            $hpassword = password_hash($password, PASSWORD_DEFAULT);
 
             $sql = "SELECT username FROM user 
                     WHERE 
-                    username = '$username' AND password = '$hpassword'";
+                    username = '$username' AND password = '$password'";
             
             $result = $conn->query($sql);
 
