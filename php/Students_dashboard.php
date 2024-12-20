@@ -1,9 +1,14 @@
+<?php
+session_start();
+
+$username = $_SESSION['user_name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[User Name]</title>
+    <title><?php echo htmlspecialchars($username); ?></title>
     <link rel="icon" href="../images/logo.png" type="image/x-icon" size="32x32">
     <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -17,17 +22,17 @@
                 <div class="dropdown">
                     <img src="../images/triple line.png" class="mx-auto d-block" style="max-width: 50px;" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu settings-dropdown">
-                        <li><a class="dropdown-item" href="index.html">Home</a></li>
-                        <li><a class="dropdown-item" href="Contactus.html">Contact Us</a></li>
-                        <li><a class="dropdown-item" href="Policy.html">Policy</a></li>
-                        <li><a class="dropdown-item" href="About.html">About Us</a></li>
+                        <li><a class="dropdown-item" href="../index.html">Home</a></li>
+                        <li><a class="dropdown-item" href="../Contactus.html">Contact Us</a></li>
+                        <li><a class="dropdown-item" href="../Policy.html">Policy</a></li>
+                        <li><a class="dropdown-item" href="../About.html">About Us</a></li>
                     </ul>
                 </div>
             </div>
             <div class="d-flex justify-content-end ms-auto">
                 <input type="file" id="fileInput" accept="image/*" style="display: none;">
                 <img id="profilePicNav" src="../images/teacher.png" alt="User" class="profile-pic" title="Click to upload a profile picture">
-                <p style="font-size: 12px;" class="text-center text-black">[user name]</p>
+                <p style="font-size: 12px;" class="text-center text-black"><?php echo htmlspecialchars($username); ?></p>
                 <div class="dropdown">
                     <img src="../images/icone-de-cloche-et-d-alerte-noir.png" class="mx-auto d-block" style="max-width: 40px;" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu settings-dropdown dropdown-menu-end">
@@ -51,7 +56,7 @@
     </nav>
 
     <div class="container-fluid p-4">
-        <h1>Welcome, [User Name]! Here you can find your tutors</h1>
+        <h1>Welcome, <?php echo htmlspecialchars($username); ?><br> Here you can find your tutors</h1>
         <h3 class="blinking" style="color: yellow;">Most Popular hired tutors...</h3>
         <div class="mb-3">
             <input type="text" id="searchInput" class="form-control d-flex" placeholder="Search for a tutor..." onkeyup="filterCards()">
@@ -203,8 +208,10 @@
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/fileupload.js"></script>
     <script src="../js/search.js"></script>
+    
+
 </body>
 </html>
