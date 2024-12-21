@@ -22,12 +22,14 @@ if (isset($_POST['login'])) {
             header("Location: Students_dashboard.php");
             exit; // Ensure no further code runs after redirection
         } else {
-            echo '<p class="error-message">Invalid username or password.</p>';
+            $error = "Invalid username or password.";
         }
     } else {
-        echo '<p class="error-message">Invalid username or password.</p>';
+        $error = "Invalid username or password.";
     }
 
     $connect->close(); // Close the database connection
+    header("Location: ../login.html?error=" . urlencode($error));
+    exit;
 }
 ?>

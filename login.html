@@ -39,6 +39,7 @@
                     <img src="images/logo.png" class="mx-auto d-block" style="max-width: 150px;">
                     <h1 id="loginTitle" class="text-center text-uppercase fw-bold text-blue p-4">Login</h1>
                     <form action="php/login.php" class="was-validated text-center" method="POST">
+                        <div id="error-message" class="alert alert-danger text-center" style="display: none;"></div>
                         <div class="mb-3">
                             <input type="text" class="form-control text-center bg-body-tertiary rounded" id="user" placeholder="User Name" name="user" required>
                             <div class="valid-feedback">Valid.</div>
@@ -81,5 +82,15 @@
 </footer>
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+   <script>
+    // JavaScript to show error message dynamically
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorMessage = urlParams.get('error');
+    if (errorMessage) {
+        const errorDiv = document.getElementById('error-message');
+        errorDiv.textContent = decodeURIComponent(errorMessage);
+        errorDiv.style.display = 'block';
+    }
+</script>
 </body>
 </html>
