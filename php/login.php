@@ -6,7 +6,7 @@ if (isset($_POST['login'])) {
     $password = $_POST["password"];
     
     // Prepare the SQL query to fetch the username and hashed password
-    $sql = "SELECT username, password FROM user WHERE username = '$username'";
+    $sql = "SELECT username, password, role FROM users WHERE username = '$username'";
     $result = $connect->query($sql);
 
     if ($result->num_rows > 0) {
@@ -17,9 +17,14 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $hashedPassword)) {
             session_start(); // Start the session
             
-            $_SESSION["user_name"] = $row["username"]; // Save username in session
+            $_SESSION["user_name"] = $row["username"];
+            $_SESSION['role'] = $row['role'];
             
-            header("Location: Students_dashboard.php");
+            if ($row['role'] === 'learner') {
+                header("Location: Students_dashboard.php");
+            } elseif ($row['role'] === 'educator') {
+                header("Location: tutordashboard.php");
+            }
             exit; // Ensure no further code runs after redirection
         } else {
             $error = "Invalid username or password.";

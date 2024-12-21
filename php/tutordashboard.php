@@ -1,9 +1,14 @@
+<?php
+session_start();
+
+$username = $_SESSION['user_name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[User Name]</title>
+    <title><?php echo htmlspecialchars($username); ?></title>
     <link rel="icon" href="../images/logo.png" type="image/x-icon" size="32x32">
     <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -28,7 +33,7 @@
             <div class="d-flex justify-content-end ms-auto">
                 <input type="file" id="fileInput" accept="image/*" style="display: none;">
                 <img id="profilePicNav" src="../images/teacher.png" alt="User" class="profile-pic" title="Click to upload a profile picture">
-                <p style="font-size: 12px;" class="text-center text-black">[user name]</p>
+                <p style="font-size: 12px;" class="text-center text-black"><?php echo htmlspecialchars($username); ?></p>
                 <div class="dropdown">
                     <img src="../images/icone-de-cloche-et-d-alerte-noir.png" class="mx-auto d-block" style="max-width: 40px;" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu settings-dropdown dropdown-menu-end">
@@ -44,7 +49,7 @@
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><a class="dropdown-item" href="#">Account</a></li>
                         <li><a class="dropdown-item" href="#">Notification</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,7 +58,7 @@
 
     <div class="d-flex">
         <div class="container-fluid p-4" style="min-height: 100vh; overflow-y: auto;">
-            <h1>Welcome, [Username]! Now you are a tutor with e-Tutor.lk,<br>Here you can find Vacancies</h1>
+            <h1>Welcome, <?php echo htmlspecialchars($username); ?> Now you are a tutor with e-Tutor.lk,<br>Here you can find Vacancies</h1>
             <h3 class="blinking" style="color: red;">Urgent Vacancies...</h3>
             <div class="input-group">
                 <input class="form-control d-flex" id="myInput" type="text" placeholder="Search Vacancies..">

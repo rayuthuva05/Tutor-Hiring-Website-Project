@@ -6,12 +6,17 @@
 			$sql = "INSERT INTO users (username, email, password, role) VALUES('$username','$email','$password','$role')";
 			$result = mysqli_query($connect,$sql);
 			if ($result) {
-				
+				if($_POST['role']=== 'learner'){
+				header('Location: ../student_register.html');
+				}
+				else{
+					header('Location: ../Tutor_register.html');
+				}
+            	exit;
 			} else {
 				die("Error ".mysqli_error($connect));
 			}
-            header('Location: ../register_next.html');
-            exit;
+            
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
