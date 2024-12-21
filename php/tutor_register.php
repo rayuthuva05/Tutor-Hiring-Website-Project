@@ -1,8 +1,9 @@
 <?php
 	require_once 'dbconf.php';
-	function AddData($connect,$fullname,$sex,$age,$address,$phone,$email,$qualification,$specialize,$year_exp,$institute,$short_bio){
+	function AddData($connect,$fullname,$sex,$age,$address,$phone,$email,$qualification,$specialize,$year_exp,$institute,$short_bio,$user_id){
 		try {
-			$sql = "INSERT INTO educator VALUES('$fullname','$sex',$age,'$address','$phone','$email','$qualification','$specialize','$year_exp','$institute','$short_bio')";
+			$sql = "INSERT INTO educator (fullname,sex,age,address,phone,email,qualification,specialize,year_exp,institute,short_bio,user_id)
+			VALUES('$fullname','$sex',$age,'$address','$phone','$email','$qualification','$specialize','$year_exp','$institute','$short_bio','$user_id')";
 			$result = mysqli_query($connect,$sql);
 			if ($result) {
 				
@@ -17,6 +18,7 @@
 	}
 	
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
+		$user_id = $_POST['user_id'];
 		$fullname = $_POST['fullname'];
 		$sex = $_POST['sex'];
 		$age = $_POST['age'];
@@ -29,7 +31,7 @@
 		$institute=$_POST['institution'];
 		$short_bio=$_POST['bio'];
 		$sexDbValue = ($sex === 'male') ? 'M' : 'F';
-		AddData($connect,$fullname,$sexDbValue,$age,$address,$phone,$email,$qualification,$specialize,$year_exp,$institute,$short_bio);
+		AddData($connect,$user_id,$fullname,$sexDbValue,$age,$address,$phone,$email,$qualification,$specialize,$year_exp,$institute,$short_bio);
 	}
 
 	?>

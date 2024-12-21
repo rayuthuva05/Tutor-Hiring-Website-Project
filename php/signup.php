@@ -5,12 +5,13 @@
 		try {
 			$sql = "INSERT INTO users (username, email, password, role) VALUES('$username','$email','$password','$role')";
 			$result = mysqli_query($connect,$sql);
+			$user_id = $connect->insert_id;
 			if ($result) {
 				if($_POST['role']=== 'learner'){
-				header('Location: ../student_register.html');
+				header("Location: ../student_register.html?user_id=$user_id");
 				}
 				else{
-					header('Location: ../Tutor_register.html');
+					header("Location: ../Tutor_register.html?user_id=$user_id");
 				}
             	exit;
 			} else {

@@ -9,7 +9,7 @@
 			} else {
 				die("Error ".mysqli_error($connect));
 			}
-            header('Location: ../#.html');
+            header('Location: ../contact_next.html');
             exit;
 		} catch (Exception $e) {
 			die($e->getMessage());
