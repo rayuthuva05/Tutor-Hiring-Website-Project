@@ -3,7 +3,7 @@
 	function AddData($connect,$fullname,$sex,$age,$address,$phone,$email,$qualification,$specialize,$year_exp,$institute,$short_bio,$user_id){
 		try {
 			$sql = "INSERT INTO educator (fullname,sex,age,address,phone,email,qualification,specialize,year_exp,institute,short_bio,user_id)
-			VALUES('$fullname','$sex',$age,'$address','$phone','$email','$qualification','$specialize','$year_exp','$institute','$short_bio','$user_id')";
+			VALUES('$fullname','$sex',$age,'$address','$phone','$email','$qualification','$specialize','$year_exp','$institute','$short_bio',$user_id)";
 			$result = mysqli_query($connect,$sql);
 			if ($result) {
 				

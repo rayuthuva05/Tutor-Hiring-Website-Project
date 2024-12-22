@@ -38,7 +38,7 @@
                 <div class="shadow p-3 mb-5 rounded card" style="background-image: url(images/gray-abstract-wireframe-technology-background_53876-101941.jpg);background-size: cover;"> 
                   <h3 class="text-center text-uppercase fw-bold text-blue p-4">Student Registeration</h3>
                     <form action="php/student_signup.php" method="post" class="was-validated text-center" id="signup_form">
-                        <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($_GET['user_id']); ?>">
+                        <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                         <div class="mb-3">
                             <input type="text" class="form-control text-center" id="fullname" placeholder="Full Name" name="fullname" required>
                             <div class="invalid-feedback">Please enter your Full name.</div>
