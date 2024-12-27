@@ -5,7 +5,7 @@
 		try {
 			$sql = "INSERT INTO users (username, email, password, role) VALUES('$username','$email','$password','$role')";
 			$result = mysqli_query($connect,$sql);
-			$id = $connect->insert_id;
+			$user = $connect->insert_username;
 			if ($result) {
 				if($_POST['role']=== 'learner'){
 				header("Location: ../student_register.html?user_id=$id");
