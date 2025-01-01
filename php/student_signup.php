@@ -1,10 +1,10 @@
 <?php
 	session_start();
 	require_once 'dbconf.php';
-	function AddData($connect,$user_id,$fullname,$sex,$age,$address,$phone,$gradien_phone,$school){
+	function AddData($connect,$username,$fullname,$sex,$age,$address,$phone,$gradien_phone,$school){
 		try {
-			$sql = "INSERT INTO learner (user_id, fullname, sex, age, address, phone, gradien_phone, school)
-			VALUES($user_id,'$fullname','$sex',$age,'$address','$phone','$gradien_phone','$school')";
+			$sql = "INSERT INTO learner (username, fullname, sex, age, address, phone, gradien_phone, school)
+			VALUES('$username','$fullname','$sex',$age,'$address','$phone','$gradien_phone','$school')";
 			$result = mysqli_query($connect,$sql);
 			if ($result) {
 				
@@ -19,7 +19,7 @@
 	}
 	
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
-		$user_id = $_POST['user_id'];
+		$username = $_SESSION['username'];
 		$fullname = $_POST['fullname'];
 		$sex = $_POST['sex'];
 		$age = $_POST['age'];
@@ -29,7 +29,7 @@
 		$school=$_POST['school'];
 		
 		$sexDbValue = ($sex === 'male') ? 'M' : 'F';
-		AddData($connect,$user_id,$fullname,$sexDbValue,$age,$address,$phone,$gradien_phone,$school);
+		AddData($connect,$username,$fullname,$sexDbValue,$age,$address,$phone,$gradien_phone,$school);
 	}
 
 	?>
