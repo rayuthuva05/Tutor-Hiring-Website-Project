@@ -8,7 +8,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE learner (
-    username PRIMARY KEY,
+    username VARCHAR(50) PRIMARY KEY,
     fullname VARCHAR(100) NOT NULL,
     sex ENUM('M', 'F') NOT NULL,
     age INT NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE learner (
 );
 
 CREATE TABLE educator (
-    username PRIMARY KEY,
+    username VARCHAR(50) PRIMARY KEY,
     fullname VARCHAR(100),
     sex ENUM('M', 'F') NOT NULL,
     age INT NOT NULL,
