@@ -3,7 +3,7 @@
 	require_once 'dbconf.php';
 	function AddData($connect,$username,$fullname,$sex,$age,$address,$phone,$gradien_phone,$school){
 		try {
-			$sql = "INSERT INTO learner (username, fullname, sex, age, address, phone, gradien_phone, school)
+			$sql = "INSERT INTO learner (username, fullname, sex, age, address, phone, guardian_phone, school)
 			VALUES('$username','$fullname','$sex',$age,'$address','$phone','$gradien_phone','$school')";
 			$result = mysqli_query($connect,$sql);
 			if ($result) {
