@@ -32,10 +32,10 @@ $email = $_SESSION['email'];
         <a class="navbar-brand " href="index.html">e-Teacher.lk</a>
       </div>
       <div class="d-flex justify-content-end ms-auto">
-        <a href="index.html">Home</a>
-        <a href="Contactus.html">Contact Us</a>
-        <a href="signup.html">Register</a>
-        <a href="login.html">Login</a>
+        <a href="../index.html">Home</a>
+        <a href="../Contactus.html">Contact Us</a>
+        <a href="../signup.html">Register</a>
+        <a href="../login.html">Login</a>
       </div>
     </div>
   </nav>
