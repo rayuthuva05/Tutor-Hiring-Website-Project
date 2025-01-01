@@ -11,7 +11,7 @@
 			} else {
 				die("Error ".mysqli_error($connect));
 			}
-            header('Location: ../register_next.html');
+            header('Location: register_next.php');
             exit;
 		} catch (Exception $e) {
 			die($e->getMessage());
