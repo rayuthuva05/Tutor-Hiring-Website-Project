@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once 'dbconf.php';
 	function AddData($connect,$username,$fullname,$sex,$age,$address,$phone,$email,$qualification,$specialize,$year_exp,$institute,$short_bio){
 		try {
