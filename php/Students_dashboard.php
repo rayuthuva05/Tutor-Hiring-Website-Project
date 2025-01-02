@@ -59,25 +59,7 @@ $username = $_SESSION['user_name'];
         </div>
     </nav>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <?php
-        echo PrintTable('educator',$connect);  
-      ?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Hire</button>
-      </div>
-    </div>
-  </div>
-</div>
+
     <div class="container-fluid p-4">
         <h1>Welcome, <?php echo htmlspecialchars($username); ?><br> Here you can find your tutors</h1>
         <h3 class="blinking" style="color: yellow;">Most Popular hired tutors...</h3>
@@ -85,34 +67,8 @@ $username = $_SESSION['user_name'];
             <input type="text" id="searchInput" class="form-control d-flex" placeholder="Search for a tutor..." onkeyup="filterCards()">
         </div>
         <div class="row" id="cardContainer">
-            <?php
-            $query = "SELECT * from educator";
-            $tutors = GetTableData($query, $connect);
-            foreach ($tutors as $tutor) {
-                $bio=$tutor['short_bio'];
-                $subject=$tutor['qualification'];
-                $special=$tutor['specialize'];
-                $name=$tutor['fullname'];
-                $address=$tutor['address'];
-                $image=$tutor['image'];
-                echo "<div class='col-md-3 tutor-card' data-name='$bio $subject $special $address $name'>";
-                echo "<div class='flip-card'>";
-                   echo "<div class='flip-card-inner'>";
-                       echo "<div class='flip-card-front'>";
-                        echo "<img src='data:image/jpeg;base64," . base64_encode($image) . "' alt='$name' class='card-img-top'>";
-                           echo "<h5 class='card-title'> $name </h5>";
-                           echo "<p class='card-text'> $subject </p>";
-                        echo "</div>";
-                       echo "<div class='flip-card-back'>";
-                           echo "<h5 class='card-title'> Mr. $name</h5>";
-                          echo "<p>Most hired by $subject students on our platform.</p>";
-                           echo "<a href='#' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>See Profile</a><br>";
-                           echo "<a href='#' class='btn btn-primary'>Hire</a>";
-                      echo "</div>";
-                   echo "</div>";
-               echo "</div>";
-           echo "</div>";
-            }
+            <?php 
+                require_once 'modal.php';
             ?>
 
             <div class="col-md-3 tutor-card">

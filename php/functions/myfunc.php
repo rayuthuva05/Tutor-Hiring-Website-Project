@@ -20,19 +20,11 @@ try {
 
 	$result = mysqli_query($connect,$sql);
 	if (mysqli_num_rows($result)>0) {
-		echo "<table border='1' style='background-color: coral'>";
-		$col = mysqli_fetch_fields($result);
-        $columns=mysqli_num_fields($result);
-		
+		echo "<table border='1'>";
+
 		while ($row = mysqli_fetch_assoc($result)) {
-			
 			foreach ($row as $key => $value) {
-                echo "<tr>";
-				echo "<td>$key</td>";
-                echo "<td> </td>";
-                echo "<td> : </td>";
-                echo "<td>$value</td>";
-                echo "</tr>";
+                echo "<tr><td><strong>" . $key . ":</strong> " . $value . "</td></tr>";
 			}
 		}
 		echo "</table>"."<br>";
