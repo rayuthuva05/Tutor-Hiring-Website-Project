@@ -1,3 +1,6 @@
+<?php
+session_start();  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +24,20 @@
       <div class="navbar-header">
         <a class="navbar-brand " href="e-Teacher.lk">e-Teacher.lk</a>
       </div>
+
+      <?php if (!(isset($_SESSION['username']))): ?>
       <div class="d-flex justify-content-end ms-auto">
-        <a href="index.html">Home</a>
+        <a href="index.php">Home</a>
         <a href="Contactus.html">Contact Us</a>
         <a href="signup.html">Register</a>
         <a href="login.html">Login</a>
       </div>
+      <?php else: ?>
+        <div class="d-flex justify-content-end ms-auto">
+        <a href="index.php">Home</a>
+        <a href="Contactus.html">Contact Us</a>
+        <a href="logout.php">Logot</a>
+        <?php endif; ?>
     </div>
   </nav>
     <div class="container">
@@ -94,7 +105,7 @@
     <footer class="footer text-center" style="opacity: 0.8;">
       <hr>
       <div class="container">
-          <p>&copy; 2024 <a href="index.html"><i>e-Teacher.lk</i></a> All rights reserved.</p>
+          <p>&copy; 2024 <a href="index.php"><i>e-Teacher.lk</i></a> All rights reserved.</p>
           <ul class="list-inline">
               <li class="list-inline-item">
                   <a href="#">Privacy Policy</a>

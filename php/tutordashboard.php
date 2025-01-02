@@ -23,10 +23,10 @@ $username = $_SESSION['user_name'];
                 <div class="dropdown">
                     <img src="../images/triple line.png" class="mx-auto d-block" style="max-width: 50px;" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu settings-dropdown">
-                        <li><a class="dropdown-item" href="index.html">Home</a></li>
-                        <li><a class="dropdown-item" href="Contactus.html">Contact Us</a></li>
-                        <li><a class="dropdown-item" href="Policy.html">Policy</a></li>
-                        <li><a class="dropdown-item" href="About.html">About Us</a></li>
+                        <li><a class="dropdown-item" href="../index.php">Home</a></li>
+                        <li><a class="dropdown-item" href="../Contactus.html">Contact Us</a></li>
+                        <li><a class="dropdown-item" href="../Policy.html">Policy</a></li>
+                        <li><a class="dropdown-item" href="../About.html">About Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -127,7 +127,7 @@ $username = $_SESSION['user_name'];
     <footer class="footer text-center" style="opacity: 0.8;">
         <hr>
         <div class="container">
-            <p>&copy; 2024 <a href="index.html"><i>e-Teacher.lk</i></a> All rights reserved.</p>
+            <p>&copy; 2024 <a href="index.php"><i>e-Teacher.lk</i></a> All rights reserved.</p>
             <ul class="list-inline">
                 <li class="list-inline-item">
                     <a href="#">Privacy Policy</a>

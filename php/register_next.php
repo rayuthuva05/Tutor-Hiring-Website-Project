@@ -29,10 +29,10 @@ $email = $_SESSION['email'];
   <nav class="navbar navbar-inverse bg-dark-blue">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand " href="index.html">e-Teacher.lk</a>
+        <a class="navbar-brand " href="index.php">e-Teacher.lk</a>
       </div>
       <div class="d-flex justify-content-end ms-auto">
-        <a href="../index.html">Home</a>
+        <a href="../index.php">Home</a>
         <a href="../Contactus.html">Contact Us</a>
         <a href="../signup.html">Register</a>
         <a href="../login.html">Login</a>
@@ -68,7 +68,7 @@ $email = $_SESSION['email'];
    <footer class="footer text-center" style="opacity: 0.8;">
     <hr>
     <div class="container">
-        <p>&copy; 2024 <a href="index.html"><i>e-Teacher.lk</i></a> All rights reserved.</p>
+        <p>&copy; 2024 <a href="index.php"><i>e-Teacher.lk</i></a> All rights reserved.</p>
         <ul class="list-inline">
             <li class="list-inline-item">
                 <a href="#">Privacy Policy</a>
