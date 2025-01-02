@@ -18,7 +18,7 @@ $username = $_SESSION['user_name'];
 <body>
     <?php
     require_once 'dbconf.php';
-    require_once 'myfunc.php';
+    require_once 'functions/myfunc.php';
     ?>
     <nav class="navbar navbar-inverse bg-white">
         <div class="container-fluid">
@@ -67,9 +67,9 @@ $username = $_SESSION['user_name'];
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      
-        <!-- GetDetails("educator",$connect,["username","short_bio"]); -->
-      
+      <?php
+        echo PrintTable('educator',$connect);  
+      ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -86,19 +86,20 @@ $username = $_SESSION['user_name'];
         </div>
         <div class="row" id="cardContainer">
             <?php
-            $query = "SELECT * from educator LIMIT=4";
-            $tutors = GetTableData($query, $connection);
+            $query = "SELECT * from educator";
+            $tutors = GetTableData($query, $connect);
             foreach ($tutors as $tutor) {
                 $bio=$tutor['short_bio'];
                 $subject=$tutor['qualification'];
                 $special=$tutor['specialize'];
                 $name=$tutor['fullname'];
                 $address=$tutor['address'];
-                echo "<div class='col-md-3 tutor-card' data-name='$bio $subject $special $address'>";
+                $image=$tutor['image'];
+                echo "<div class='col-md-3 tutor-card' data-name='$bio $subject $special $address $name'>";
                 echo "<div class='flip-card'>";
                    echo "<div class='flip-card-inner'>";
                        echo "<div class='flip-card-front'>";
-                        echo "<img src='../images/tamil-actor-vijay-photos-586.jpg' alt='Tutor' class='card-img-top'>";
+                        echo "<img src='data:image/jpeg;base64," . base64_encode($image) . "' alt='$name' class='card-img-top'>";
                            echo "<h5 class='card-title'> $name </h5>";
                            echo "<p class='card-text'> $subject </p>";
                         echo "</div>";
@@ -151,7 +152,7 @@ $username = $_SESSION['user_name'];
 
     <div class="modal-body text-center">
         <img id="largeProfilePic" src="images/teacher.png" alt="Profile Picture" class="modal-img" style="display: none;">
-        <p id="uploadPrompt" class="text-muted">No profile picture uploaded. Please upload a new one.</p>
+        <p id="uploadPrompt" class="text-muted"></p>
     </div>
     
     <footer class="footer text-center" style="opacity: 0.8;">
