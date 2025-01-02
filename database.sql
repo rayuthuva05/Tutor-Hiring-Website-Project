@@ -32,6 +32,7 @@ CREATE TABLE educator (
     year_exp int,
     institute varchar(100),
     short_bio varchar(300),
+    image mediumbolb,
     FOREIGN KEY (username) REFERENCES users(username)
 );
 
