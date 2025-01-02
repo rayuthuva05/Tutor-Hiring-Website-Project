@@ -16,6 +16,10 @@ $username = $_SESSION['user_name'];
     <link rel="stylesheet" href="../sylesheets/Sdashboard.css">
 </head>
 <body>
+    <?php
+    require_once 'dbconf.php';
+    require_once 'myfunc.php';
+    ?>
     <nav class="navbar navbar-inverse bg-white">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -63,11 +67,9 @@ $username = $_SESSION['user_name'];
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <?php
-        require_once 'dbconf.php';
-        require_once 'myfunc.php';
-        GetDetails("educator",$connect,["username","short_bio"]);
-    ?>
+      
+        <!-- GetDetails("educator",$connect,["username","short_bio"]); -->
+      
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -83,59 +85,35 @@ $username = $_SESSION['user_name'];
             <input type="text" id="searchInput" class="form-control d-flex" placeholder="Search for a tutor..." onkeyup="filterCards()">
         </div>
         <div class="row" id="cardContainer">
-            <div class="col-md-3 tutor-card" data-name="Malavika Physics mechanics automobile science">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="../images/teacher.png" alt="Tutor" class="card-img-top">
-                            <h5 class="card-title">Mrs. Malavika BSc (Physics)</h5>
-                            <p class="card-text">Specialized in Physics</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h5 class="card-title">Mrs. Malavika</h5>
-                            <p>Most hired by Physics students on our platform.</p>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">See Profile</button><br>
-                            <a href="#" class="btn btn-primary">Hire</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 tutor-card" data-name="Vijay Cyber Security IT computer science programming">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="../images/tamil-actor-vijay-photos-586.jpg" alt="Tutor" class="card-img-top">
-                            <h5 class="card-title">Mr. Vijay BSc (Comp.Sc)</h5>
-                            <p class="card-text">Specialized in Cyber Security</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h5 class="card-title">Mr. Vijay</h5>
-                            <p>Most hired by IT students on our platform.</p>
-                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">See Profile</a><br>
-                            <a href="#" class="btn btn-primary">Hire</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+            $query = "SELECT * from educator LIMIT=4";
+            $tutors = GetTableData($query, $connection);
+            foreach ($tutors as $tutor) {
+                $bio=$tutor['short_bio'];
+                $subject=$tutor['qualification'];
+                $special=$tutor['specialize'];
+                $name=$tutor['fullname'];
+                $address=$tutor['address'];
+                echo "<div class='col-md-3 tutor-card' data-name='$bio $subject $special $address'>";
+                echo "<div class='flip-card'>";
+                   echo "<div class='flip-card-inner'>";
+                       echo "<div class='flip-card-front'>";
+                        echo "<img src='../images/tamil-actor-vijay-photos-586.jpg' alt='Tutor' class='card-img-top'>";
+                           echo "<h5 class='card-title'> $name </h5>";
+                           echo "<p class='card-text'> $subject </p>";
+                        echo "</div>";
+                       echo "<div class='flip-card-back'>";
+                           echo "<h5 class='card-title'> Mr. $name</h5>";
+                          echo "<p>Most hired by $subject students on our platform.</p>";
+                           echo "<a href='#' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>See Profile</a><br>";
+                           echo "<a href='#' class='btn btn-primary'>Hire</a>";
+                      echo "</div>";
+                   echo "</div>";
+               echo "</div>";
+           echo "</div>";
+            }
+            ?>
 
-            <div class="col-md-3 tutor-card" data-name="Vijay Cyber Security IT computer science programming">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="../images/tamil-actor-vijay-photos-586.jpg" alt="Tutor" class="card-img-top">
-                            <h5 class="card-title">Mr. Vijay BSc (Comp.Sc)</h5>
-                            <p class="card-text">Specialized in Cyber Security</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h5 class="card-title">Mr. Vijay</h5>
-                            <p>Most hired by IT students on our platform.</p>
-                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">See Profile</a><br>
-                            <a href="#" class="btn btn-primary">Hire</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             <div class="col-md-3 tutor-card">
                 <div class="flip-card">
                     <div class="flip-card-inner">
