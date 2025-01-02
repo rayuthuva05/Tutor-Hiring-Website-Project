@@ -55,6 +55,27 @@ $username = $_SESSION['user_name'];
         </div>
     </nav>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <?php
+        require_once 'dbconf.php';
+        require_once 'myfunc.php';
+        GetDetails("educator",$connect,["username","short_bio"]);
+    ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Hire</button>
+      </div>
+    </div>
+  </div>
+</div>
     <div class="container-fluid p-4">
         <h1>Welcome, <?php echo htmlspecialchars($username); ?><br> Here you can find your tutors</h1>
         <h3 class="blinking" style="color: yellow;">Most Popular hired tutors...</h3>
@@ -73,7 +94,7 @@ $username = $_SESSION['user_name'];
                         <div class="flip-card-back">
                             <h5 class="card-title">Mrs. Malavika</h5>
                             <p>Most hired by Physics students on our platform.</p>
-                            <a href="#" class="btn btn-primary">See Profile</a><br>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">See Profile</button><br>
                             <a href="#" class="btn btn-primary">Hire</a>
                         </div>
                     </div>
@@ -90,46 +111,13 @@ $username = $_SESSION['user_name'];
                         <div class="flip-card-back">
                             <h5 class="card-title">Mr. Vijay</h5>
                             <p>Most hired by IT students on our platform.</p>
-                            <a href="#" class="btn btn-primary">See Profile</a><br>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">See Profile</a><br>
                             <a href="#" class="btn btn-primary">Hire</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 tutor-card" data-name="Suriya Arts History Tamil">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="../images/suriya-tamil-actors-hd-phone-jce56vv2zem5dogu.jpg" alt="Tutor" class="card-img-top">
-                            <h5 class="card-title">Mr. Suriya B.A</h5>
-                            <p class="card-text">Specialized in B.A Tamil & History</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h5 class="card-title">Mr. Suriya</h5>
-                            <p>Most hired by Arts students on our platform.</p>
-                            <a href="#" class="btn btn-primary">See Profile</a><br>
-                            <a href="#" class="btn btn-primary">Hire</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 tutor-card" data-name="Malavika Physics mechanics automobile science">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="../images/teacher.png" alt="Tutor" class="card-img-top">
-                            <h5 class="card-title">Mrs. Malavika BSc (Physics)</h5>
-                            <p class="card-text">Specialized in Physics</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h5 class="card-title">Mrs. Malavika</h5>
-                            <p>Most hired by Physics students on our platform.</p>
-                            <a href="#" class="btn btn-primary">See Profile</a><br>
-                            <a href="#" class="btn btn-primary">Hire</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div class="col-md-3 tutor-card" data-name="Vijay Cyber Security IT computer science programming">
                 <div class="flip-card">
                     <div class="flip-card-inner">
@@ -141,14 +129,14 @@ $username = $_SESSION['user_name'];
                         <div class="flip-card-back">
                             <h5 class="card-title">Mr. Vijay</h5>
                             <p>Most hired by IT students on our platform.</p>
-                            <a href="#" class="btn btn-primary">See Profile</a><br>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">See Profile</a><br>
                             <a href="#" class="btn btn-primary">Hire</a>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-md-3 tutor-card" data-name="Suriya Arts History Tamil">
+            <div class="col-md-3 tutor-card">
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
