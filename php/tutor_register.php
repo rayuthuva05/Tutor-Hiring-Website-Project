@@ -3,8 +3,9 @@
 	require_once 'dbconf.php';
 	function AddData($connect,$username,$fullname,$sex,$age,$address,$phone,$email,$qualification,$specialize,$year_exp,$institute,$short_bio,$image){
 		try {
+			$imgData = addslashes(file_get_contents($image));
 			$sql = "INSERT INTO educator (username,fullname,sex,age,address,phone,email,qualification,specialize,year_exp,institute,short_bio,image)
-			VALUES('$username','$fullname','$sex',$age,'$address','$phone','$email','$qualification','$specialize','$year_exp','$institute','$short_bio','$image')";
+			VALUES('$username','$fullname','$sex',$age,'$address','$phone','$email','$qualification','$specialize','$year_exp','$institute','$short_bio','$imgData')";
 			$result = mysqli_query($connect,$sql);
 			if ($result) {
 				
@@ -31,7 +32,7 @@
 		$year_exp=$_POST['experience'];
 		$institute=$_POST['institution'];
 		$short_bio=$_POST['bio'];
-		$image=$_POST['image'];
+		$image = $_FILES['image']['tmp_name'];
 		$sexDbValue = ($sex === 'male') ? 'M' : 'F';
 		AddData($connect,$username,$fullname,$sexDbValue,$age,$address,$phone,$email,$qualification,$specialize,$year_exp,$institute,$short_bio,$image);
 	}
