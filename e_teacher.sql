@@ -88,7 +88,7 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` enum('learner','tutor') NOT NULL
+  `role` enum('learner','educator') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -96,9 +96,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `email`, `password`, `role`) VALUES
-('mathi', 'mathi2001@gmail.com', '$2y$10$hpg3s86QrxlFy4CezREzY.ErRVHkJFEgHEnefzWL4DHb7yRoyY.xS', 'tutor'),
-('nimal', 'nimal@gmail.com', '$2y$10$MSX.7l9gL5XKvDiWzS/0kOkz6ZP47YINGCJGKeQEvS1ZWhWjq.3Um', 'tutor'),
-('ravithuva', 'ravi30@gmail.com', '$2y$10$VaNmHbs7MB/ji6.G.1ZpLeElriGrTfEFJ4okLhwYMwIFgGtkDSxYq', 'tutor'),
+('mathi', 'mathi2001@gmail.com', '$2y$10$hpg3s86QrxlFy4CezREzY.ErRVHkJFEgHEnefzWL4DHb7yRoyY.xS', 'educator'),
+('nimal', 'nimal@gmail.com', '$2y$10$MSX.7l9gL5XKvDiWzS/0kOkz6ZP47YINGCJGKeQEvS1ZWhWjq.3Um', 'educator'),
+('ravithuva', 'ravi30@gmail.com', '$2y$10$VaNmHbs7MB/ji6.G.1ZpLeElriGrTfEFJ4okLhwYMwIFgGtkDSxYq', 'educator'),
 ('rayuthuva', 'ravithuva05@gmail.com', '$2y$10$VAFJsff8OiPoaJd3Jaed/erkQmpaY87WEyE8L38YJqCLf65QuBo7.', 'learner');
 
 --
