@@ -24,7 +24,7 @@
       </div>
       <div class="d-flex justify-content-end ms-auto">
         <a href="index.php">Home</a>
-        <a href="Contactus.html">Contact Us</a>
+        <a href="Contactus.php">Contact Us</a>
         <a href="signup.html">Register</a>
         <a href="login.html">Login</a>
       </div>
