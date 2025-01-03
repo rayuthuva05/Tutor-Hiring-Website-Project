@@ -17,19 +17,9 @@
     <link rel="stylesheet" href="sylesheets/register.css">
 </head>
 <body>
-  <nav class="navbar navbar-inverse bg-dark-blue">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand " href="index.php">e-Teacher.lk</a>
-      </div>
-      <div class="d-flex justify-content-end ms-auto">
-        <a href="index.php">Home</a>
-        <a href="Contactus.html">Contact Us</a>
-        <a href="signup.html" class="btn btn-link disabled">Register</a>
-        <a href="login.html">Login</a>
-      </div>
-    </div>
-  </nav>
+<?php
+    require_once 'php/navigation.php';
+  ?>
 
   <div class="container mt-3">
     <div class="row justify-content-center">
@@ -68,7 +58,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg mb-3">Sign up</button>
-                        <p class="text-center">Already have an account? <a href="login.html">Login</a></p>
+                        <p class="text-center">Already have an account? <a href="signin.php">Login</a></p>
                     </form>
                 </div>
             </div>
@@ -77,23 +67,9 @@
       
    <br>
    <br>
-   <footer class="footer text-center" style="opacity: 0.8;">
-    <hr>
-    <div class="container">
-        <p>&copy; 2024 <a href="index.php"><i>e-Teacher.lk</i></a> All rights reserved.</p>
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#">Terms of Service</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#">Contact Us</a>
-            </li>
-        </ul>
-    </div>
-</footer>
+   <?php
+    require_once 'php/footer.php';
+  ?>
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
    <script src="js/password.js"></script>

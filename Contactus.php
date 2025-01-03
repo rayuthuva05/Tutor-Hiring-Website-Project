@@ -19,18 +19,9 @@
     
 </head>
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand " href="index.php">e-Teacher.lk</a>
-      </div>
-      <div class="d-flex justify-content-end ms-auto">
-        <a href="index.php">Home</a>
-        <a href="Contactus.html"  class="btn btn-link disabled">Contact Us</a>
-        <a href="signup.html">Register</a>
-        <a href="login.html">Login</a>
-      </div>
-    </div>
+<?php
+    require_once 'php/navigation.php';
+  ?>
   </nav>
 <main id="main">
     <section class="contact-section">
@@ -120,23 +111,9 @@
     </section>
 </main>
 <br><br>
-    <footer class="footer text-center" style="opacity: 0.8;">
-      <hr>
-      <div class="container">
-          <p>&copy; 2024 <a href="index.php"><i>e-Teacher.lk</i></a> All rights reserved.</p>
-          <ul class="list-inline">
-              <li class="list-inline-item">
-                  <a href="#">Privacy Policy</a>
-              </li>
-              <li class="list-inline-item">
-                  <a href="#">Terms of Service</a>
-              </li>
-              <li class="list-inline-item">
-                  <a href="#">Contact Us</a>
-              </li>
-          </ul>
-      </div>
-  </footer>
+<?php
+    require_once 'php/footer.php';
+  ?>
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">

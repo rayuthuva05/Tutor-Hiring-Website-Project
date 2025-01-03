@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $hashed_password;
 
-    header("Location: ../register.html");
+    header("Location: ../selection.php");
     exit;
 }
 ?>

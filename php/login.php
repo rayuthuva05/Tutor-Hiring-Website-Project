@@ -34,7 +34,7 @@ if (isset($_POST['login'])) {
     }
 
     $connect->close(); // Close the database connection
-    header("Location: ../login.html?error=" . urlencode($error));
+    header("Location: ../signin.php?error=" . urlencode($error));
     exit;
 }
 ?>

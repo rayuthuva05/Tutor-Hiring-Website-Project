@@ -19,27 +19,10 @@ session_start();
     <link rel="stylesheet" href="sylesheets/index.css">
 </head>
 <body>
-  <nav class="navbar navbar-inverse bg-dark-blue">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand " href="e-Teacher.lk">e-Teacher.lk</a>
-      </div>
-
-      <?php if (!(isset($_SESSION['username']))): ?>
-      <div class="d-flex justify-content-end ms-auto">
-        <a href="index.php">Home</a>
-        <a href="Contactus.html">Contact Us</a>
-        <a href="signup.html">Register</a>
-        <a href="login.html">Login</a>
-      </div>
-      <?php else: ?>
-        <div class="d-flex justify-content-end ms-auto">
-        <a href="index.php">Home</a>
-        <a href="Contactus.html">Contact Us</a>
-        <a href="logout.php">Logot</a>
-        <?php endif; ?>
-    </div>
-  </nav>
+  <?php
+    require_once 'php/navigation.php';
+  ?>
+  
     <div class="container">
         <div class="row align-items-stretch">
             <div class="col-md-3 card-text" style="opacity: 1;">
@@ -102,23 +85,9 @@ session_start();
               <a class="btn btn-primary btn-lg" href="letstart.html">Let Start 👉</a>
             </div>
     <br><br>
-    <footer class="footer text-center" style="opacity: 0.8;">
-      <hr>
-      <div class="container">
-          <p>&copy; 2024 <a href="index.php"><i>e-Teacher.lk</i></a> All rights reserved.</p>
-          <ul class="list-inline">
-              <li class="list-inline-item">
-                  <a href="#">Privacy Policy</a>
-              </li>
-              <li class="list-inline-item">
-                  <a href="#">Terms of Service</a>
-              </li>
-              <li class="list-inline-item">
-                  <a href="#">Contact Us</a>
-              </li>
-          </ul>
-      </div>
-  </footer>
+    <?php
+      require_once 'php/footer.php';
+    ?>
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
    <script src="js/index.js"></script>
   

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp/SignIn</title>
+    <title>Select Role</title>
     <link rel="icon" href="images/logo.png" type="image/x-icon" size="32x32">
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -14,34 +14,27 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="sylesheets/letstart.css">
+    <link rel="stylesheet" href="sylesheets/register.css">
+   
 </head>
 <body>
-  <nav class="navbar navbar-inverse bg-dark-blue">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand " href="index.php">e-Teacher.lk</a>
-      </div>
-      <div class="d-flex justify-content-end ms-auto">
-        <a href="index.php">Home</a>
-        <a href="Contactus.html">Contact Us</a>
-        <a href="signup.html">Register</a>
-        <a href="login.html">Login</a>
-      </div>
-    </div>
-  </nav>
+<?php
+    require_once 'php/navigation.php';
+  ?>
 
   <div class="container mt-3">
     <div class="row justify-content-center">
         <div class="col-md-5 user-profile">
             <div class="shadow p-3 mb-5 bg-body-tertiary rounded card">
-                <img src="images/hand.png" class="mx-auto d-block" style="max-width: 250px;"><br>
+                <img src="images/user.png" class="mx-auto d-block" style="max-width: 250px;"><br>
                 <div class="text-center mb-3">
-                    <h3 class="text-center text-uppercase">Welcome to Join with Us</h3><br>
-                    <a href="signup.html" class="btn btn-primary btn-lg">Sign Up</a>
-                    <br><hr>
-                    <h3 class="text-center text-uppercase">Login your account</h3><br>
-                    <a href="login.html" class="btn btn-primary btn-lg">Login</a>
+                    <h3 class="text-center text-uppercase">Select your role</h3><br>
+                    <form action="php/signup.php" method="POST">
+                    <button type="submit" class="btn btn-primary btn-lg mb-3" name="role" value="educator">Educator</button>
+                    <br><br>
+                    <p class="text-uppercase fw-bold">OR</p>
+                    <button type="submit" class="btn btn-primary btn-lg mb-3" name="role" value="learner">Learner</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -49,23 +42,9 @@
 </div>
    <br>
    <br>
-   <footer class="footer text-center" style="opacity: 0.8;">
-    <hr>
-    <div class="container">
-        <p>&copy; 2024 <a href="index.php"><i>e-Teacher.lk</i></a> All rights reserved.</p>
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#">Terms of Service</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#">Contact Us</a>
-            </li>
-        </ul>
-    </div>
-</footer>
+   <?php
+    require_once 'php/footer.php';
+  ?>
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>

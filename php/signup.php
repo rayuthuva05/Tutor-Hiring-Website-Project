@@ -8,10 +8,10 @@
 			$user = $connect->insert_username;
 			if ($result) {
 				if($_POST['role']=== 'learner'){
-				header("Location: ../student_register.html?user_id=$id");
+				header("Location: ../student_register.php?user_id=$id");
 				}
 				else{
-					header("Location: ../Tutor_register.html?user_id=$id");
+					header("Location: ../Tutor_signup.php?user_id=$id");
 				}
             	exit;
 			} else {
@@ -26,7 +26,7 @@
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		if (!isset($_SESSION['username']) || !isset($_SESSION['email']) || !isset($_SESSION['password'])|| !isset($_POST['role'])) {
 			// Redirect to the first step if session data is missing
-			header("Location: ../signup.html?error=Session expired. Please start again.");
+			header("Location: ../register.php?error=Session expired. Please start again.");
 			exit;
 		}
 		$role = $_POST['role'];
