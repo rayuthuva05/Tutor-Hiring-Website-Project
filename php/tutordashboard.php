@@ -2,6 +2,11 @@
 session_start();
 
 $username = $_SESSION['user_name'];
+$isLoggedIn = isset($_SESSION['user_name']);
+
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1
+header("Pragma: no-cache"); // HTTP 1.0
+header("Expires: 0");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +29,7 @@ $username = $_SESSION['user_name'];
                     <img src="../images/triple line.png" class="mx-auto d-block" style="max-width: 50px;" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu settings-dropdown">
                         <li><a class="dropdown-item" href="../index.php">Home</a></li>
-                        <li><a class="dropdown-item" href="../Contactus.html">Contact Us</a></li>
+                        <li><a class="dropdown-item" href="../Contactus.php">Contact Us</a></li>
                         <li><a class="dropdown-item" href="../Policy.html">Policy</a></li>
                         <li><a class="dropdown-item" href="../About.html">About Us</a></li>
                     </ul>

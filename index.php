@@ -1,5 +1,7 @@
 <?php
-session_start();  
+session_start();
+
+$isLoggedIn = isset($_SESSION['username']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +84,9 @@ session_start();
             </div>
             <br>
             <div class="col d-flex justify-content-center align-items-center">
-              <a class="btn btn-primary btn-lg" href="letstart.html">Let Start 👉</a>
+              <?php if(!$isLoggedIn): ?>
+              <a class="btn btn-primary btn-lg" href="letstart.php">Let Start 👉</a>
+              <?php endif; ?>
             </div>
     <br><br>
     <?php
