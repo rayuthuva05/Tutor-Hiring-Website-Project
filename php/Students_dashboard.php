@@ -10,7 +10,6 @@ header("Pragma: no-cache");
 header("Expires: 0");
 
 if (!isset($username) || !isset($_SESSION['role'])) {
-    // Redirect to login page if not logged in or not an admin
     header('Location: ../signin.php');
     exit();
 }
@@ -100,46 +99,13 @@ if (!isset($username) || !isset($_SESSION['role'])) {
         </div>
     </div>
 
-    <div class="modal fade" id="profilePicModal" tabindex="-1" aria-labelledby="profilePicModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="profilePicModalLabel">Profile Picture</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <img id="largeProfilePic" src="images/default-profile.png" alt="Profile Picture" class="modal-img">
-                </div>
-                <div class="modal-footer">
-                    <input type="file" id="modalFileInput" accept="image/*" style="display: none;">
-                    <button type="button" class="btn btn-primary" id="editProfilePicButton">Upload New Profile Picture</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-body text-center">
-        <img id="largeProfilePic" src="images/teacher.png" alt="Profile Picture" class="modal-img" style="display: none;">
-        <p id="uploadPrompt" class="text-muted"></p>
-    </div>
+    <?php
+        require_once 'profliemodal.php';
+    ?>
     
-    <footer class="footer text-center" style="opacity: 0.8;">
-        <hr>
-        <div class="container">
-            <p>&copy; 2024 <a href="index.php"><i>e-Teacher.lk</i></a> All rights reserved.</p>
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    <a href="#">Privacy Policy</a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="#">Terms of Service</a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="#">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+    <?php
+        require_once 'footer.php';
+    ?>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
